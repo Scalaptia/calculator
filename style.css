@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Calculator';
+    src: url(./fonts/Calculator.ttf);
+}
+
 body {
     background-color: #f6f6f6;
     color: black;
@@ -7,12 +12,14 @@ body {
 
 header {
     display: flex;
-    background: rgb(0, 0, 12);
-    color: rgb(240, 240, 240);
-    height: 6em;
+    border-bottom: 2px rgb(62, 69, 85) solid;
+    border-top: 2px rgb(62, 69, 85) solid;
+    background: rgb(189, 188, 188);
+    height: 100px;
     align-items: center;
-    font-size: 16px;
-    font-weight: 900;
+    font-size: 24px;
+    font-weight: 800;
+    font-family: "Calculator";
     padding: 0 16px;
     justify-content: center;
     text-align: center;
@@ -39,33 +46,43 @@ main {
 
 .calculator {
     width: 400px;
-    border: 2px #333 solid;
+    border: 2px rgb(62, 69, 85) solid;
     border-radius: 15px;
     padding: 20px;
-    background-color: #aaa;
+    background-color: rgb(189, 188, 188);
+}
+
+.row {
+    margin-bottom: 5px;
 }
 
 /* SCREEN */
 
 .screen {
     padding: 10px 20px;
-    border: 2px #333 solid;
+    border: 2px rgb(62, 69, 85) solid;
     border-radius: 5px;
     margin-bottom: 20px;
-    background-color: #ffffff;
+    background-color: #c4f8ac;
     text-align: right;
     word-wrap: break-word;
     word-break: break-all;
 }
 
+.lastScreen,
+.currentScreen {
+    font-family: 'Calculator';
+    font-weight: 600;
+}
+
 .lastScreen {
     height: 40px;
-    font-size: 20px;
+    font-size: 30px;
 }   
 
 .currentScreen {
     height: 60px;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 /* BUTTONS */
@@ -80,6 +97,7 @@ main {
 .buttons button {
     height: 97px;
     width: 97px;
+    font-weight: 800;
 }
 
 .btn {
@@ -87,7 +105,7 @@ main {
     border: 2px #333 solid;
     border-radius: 5px;
     background-color: #eee;
-    font-size: 20px;
+    font-size: 30px;
 }
   
 .btn:hover {

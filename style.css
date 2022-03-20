@@ -100,12 +100,17 @@ main {
     font-weight: 800;
 }
 
-.btn {
+.btn,
+.btn-red,
+.btn-yellow {
     padding: 20px;
     border: 2px #333 solid;
     border-radius: 5px;
-    background-color: #eee;
     font-size: 30px;
+}
+
+.btn {
+    background-color: #eee;
 }
   
 .btn:hover {
@@ -114,6 +119,35 @@ main {
   
 .btn:active {
     background-color: #ccc;
+}
+
+#clearBtn,
+#deleteBtn {
+    width: 198px;
+}
+
+.btn-red {
+    background-color: rgb(230, 124, 124);
+}
+  
+.btn-red:hover {
+    background-color: rgb(230, 100, 100);
+}
+  
+.btn-red:active { 
+    background-color: rgb(230, 84, 84);
+}
+
+.btn-yellow {
+    background-color: rgb(242, 255, 130);
+}
+  
+.btn-yellow:hover {
+    background-color: rgb(242, 231, 110);
+}
+  
+.btn-yellow:active {
+    background-color: rgb(242, 215, 90);
 }
 
 /* Footer */

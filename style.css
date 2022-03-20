@@ -1,0 +1,116 @@
+body {
+    background-color: #f6f6f6;
+    color: black;
+    font-family: 'Bebas Neue', cursive;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    background: rgb(0, 0, 12);
+    color: rgb(240, 240, 240);
+    height: 6em;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 0 16px;
+    justify-content: center;
+    text-align: center;
+}
+
+/* MAIN */
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    min-height: 500px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.calculator {
+    width: 400px;
+    border: 2px #333 solid;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #aaa;
+}
+
+/* SCREEN */
+
+.screen {
+    padding: 10px 20px;
+    border: 2px #333 solid;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.lastScreen {
+    height: 40px;
+    font-size: 20px;
+}   
+
+.currentScreen {
+    height: 60px;
+    font-size: 40px;
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buttons button {
+    height: 97px;
+    width: 97px;
+}
+
+.btn {
+    padding: 20px;
+    border: 2px #333 solid;
+    border-radius: 5px;
+    background-color: #eee;
+    font-size: 20px;
+}
+  
+.btn:hover {
+    background-color: #ddd;
+}
+  
+.btn:active {
+    background-color: #ccc;
+}
+
+/* Footer */
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer h1{
+    font-size: 18px;
+    font-weight: 400;
+}

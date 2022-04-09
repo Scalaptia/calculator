@@ -121,8 +121,8 @@ main {
     background-color: #ccc;
 }
 
-#clearBtn,
-#deleteBtn {
+#clear-btn,
+#delete-btn {
     width: 198px;
 }
 

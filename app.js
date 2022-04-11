@@ -31,7 +31,12 @@ appendNumber(number) {
 }
 
 chooseOperation(operation) {
+    // Skip if no numbers are present
     if(this.currentOperand === "") return
+    // Do the operation then send to lastScreen
+    if(this.lastOperand !== ""){
+        this.calculate()
+    }
     this.operation = operation
     this.lastOperand = this.currentOperand
     this.currentOperand = ""
@@ -48,6 +53,7 @@ updateDisplay() {
 
 }
 
+/*
   const add = function(a, b) {
       return a + b;
   };
@@ -67,7 +73,7 @@ updateDisplay() {
   function operate(func, a, b) {
       return func(a, b);
   }
-
+*/
 
 const calculator = new Calculator(lastScreen, currentScreen)
 
@@ -80,9 +86,16 @@ numberButtons.forEach(button => {
     })
   })
 
+  // Listener that sets number pressed as operation and sends currentOperand
+  // to lastScreen
 operationButtons.forEach(button => {
     button.addEventListener('click', () => {
       calculator.chooseOperation(button.innerText)
       calculator.updateDisplay()
     })
   })
+
+equalsButton.addEventListener('click', () => {
+    calculator.calculate()
+    calculator.updateDisplay()
+})

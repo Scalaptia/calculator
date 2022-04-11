@@ -78,6 +78,7 @@ main {
 #lastScreen {
     height: 40px;
     font-size: 30px;
+    color: rgb(29, 29, 29);
 }   
 
 #currentScreen {

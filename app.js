@@ -19,14 +19,10 @@ clearScreen() {
     this.operation = undefined
 }
 
-deleteFunction() {
-    this.currentOperand = ""
-    this.lastOperand = ""
+delete() {
+    this.currentOperand = this.currentOperand.toString().slice(0, -1)
 }
 
-clearFunction() {
-    this.currentOperand = ""
-}
 
 appendNumber(number) {
     // Allows only 1 period
@@ -75,9 +71,13 @@ calculate() {
 
 updateDisplay() {
     this.currentScreen.innerText = this.currentOperand
-    this.lastScreen.innerText = this.lastOperand
+    if(this.operation != null){
+        this.lastScreen.innerText =
+        `${this.lastOperand} ${this.operation}`
+    } else {
+        this.lastScreen.innerText = ""
+    }
 }
-
 }
 
 const calculator = new Calculator(lastScreen, currentScreen)
@@ -106,11 +106,11 @@ equalsButton.addEventListener('click', button => {
 })
 
 deleteButton.addEventListener('click', button => {
-    calculator.deleteFunction()
+    calculator.delete()
     calculator.updateDisplay()
 })
 
 clearButton.addEventListener('click', button => {
-    calculator.clearFunction()
+    calculator.clearScreen()
     calculator.updateDisplay()
 })

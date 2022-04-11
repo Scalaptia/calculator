@@ -1,5 +1,5 @@
 const numberButtons = document.querySelectorAll('[number-btn]');
-const operatorButtons = document.querySelectorAll('[operator-btn]');
+const operationButtons = document.querySelectorAll('[operator-btn]');
 const equalsButton = document.querySelector('[equals-btn]');
 const clearButton = document.querySelector('[clear-btn]');
 const deleteButton = document.querySelector('[delete-btn]');
@@ -24,11 +24,17 @@ deleteScreens() {
 }
 
 appendNumber(number) {
-    this.currentOperand = number
+    // Allows only 1 period
+    if (number === "." && this.currentOperand.includes(".")) return
+    if (this.currentOperand.length > 15) return
+    this.currentOperand = this.currentOperand.toString() + number.toString()
 }
 
 chooseOperation(operation) {
-
+    if(this.currentOperand === "") return
+    this.operation = operation
+    this.lastOperand = this.currentOperand
+    this.currentOperand = ""
 }
 
 calculate() {
@@ -37,6 +43,7 @@ calculate() {
 
 updateDisplay() {
     this.currentScreen.innerText = this.currentOperand
+    this.lastScreen.innerText = this.lastOperand
 }
 
 }
@@ -69,6 +76,13 @@ const calculator = new Calculator(lastScreen, currentScreen)
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
       calculator.appendNumber(button.innerText)
+      calculator.updateDisplay()
+    })
+  })
+
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      calculator.chooseOperation(button.innerText)
       calculator.updateDisplay()
     })
   })

@@ -58,7 +58,7 @@ main {
 
 /* SCREEN */
 
-.screen {
+#screen {
     padding: 10px 20px;
     border: 2px rgb(62, 69, 85) solid;
     border-radius: 5px;
@@ -69,18 +69,18 @@ main {
     word-break: break-all;
 }
 
-.lastScreen,
-.currentScreen {
+#lastScreen,
+#currentScreen {
     font-family: 'Calculator';
     font-weight: 600;
 }
 
-.lastScreen {
+#lastScreen {
     height: 40px;
     font-size: 30px;
 }   
 
-.currentScreen {
+#currentScreen {
     height: 60px;
     font-size: 50px;
 }

@@ -1,14 +1,45 @@
-let displayValue = ""
+class Calculator {
+    constructor(lastScreen, currentScreen) {
+        this.lastScreen = lastScreen
+        this.currentScreen = currentScreen
+        this.clearScreen()
+    }
+    
+}
 
-const numberButtons = document.querySelectorAll('[number-btn]')
-const operatorButtons = document.querySelectorAll('[operator-btn]')
-const equalsButton = document.getElementById('equals-btn')
-const pointButton = document.getElementById('point-btn')
-const clearButton = document.getElementById('clear-btn')
-const deleteButton = document.getElementById('delete-btn')
-const lastScreen = document.getElementById('lastScreen')
-const currentScreen = document.getElementById('currentScreen')
-  
+const numberButtons = document.querySelectorAll('[number-btn]');
+const operatorButtons = document.querySelectorAll('[operator-btn]');
+const equalsButton = document.querySelector('[equals-btn]');
+const clearButton = document.querySelector('[clear-btn]');
+const deleteButton = document.querySelector('[delete-btn]');
+const lastScreen = document.querySelector('[last-screen]');
+const currentScreen = document.querySelector('[current-screen]');
+
+const clearScreen = function() {
+    currentScreen = ""
+    lastScreen = ""
+}
+
+const deleteScreens = function() {
+
+}
+
+const appendNumber = function(number) {
+
+}
+
+const chooseOperation = function(operation) {
+
+}
+
+const calculate = function() {
+
+}
+
+const updateDisplay = function() {
+
+}
+
   const add = function(a, b) {
       return a + b;
   };
@@ -28,3 +59,6 @@ const currentScreen = document.getElementById('currentScreen')
   function operate(func, a, b) {
       return func(a, b);
   }
+
+
+const calculator = new Calculator(lastScreen, currentScreen)

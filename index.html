@@ -15,15 +15,14 @@
     </header>
     <main class="content">
         <div class="calculator">
-            <div class="screen">
-                <div class="lastScreen"></div>
-                <div class="currentScreen"></div>
+            <div id="screen">
+                <div id="lastScreen" last-screen></div>
+                <div id="currentScreen" current-screen></div>
             </div>
-
             <div class="buttons">
                 <div class="row">
-                    <button class="btn-red" id="clear-btn">CLEAR</button>
-                    <button class="btn-yellow" id="delete-btn">DELETE</button>
+                    <button id="clear-btn" class="btn-red" clear-btn>CLEAR</button>
+                    <button id="delete-btn" class="btn-yellow" delete-btn>DELETE</button>
                 </div>
                 <div class="row">
                     <button class="btn" number-btn>7</button>
@@ -45,9 +44,9 @@
                 </div>
                 <div>
                     <button class="btn" number-btn>0</button>
-                    <button class="btn" id="point-btn">·</button>
+                    <button class="btn" number-btn>·</button>
                     <button class="btn" operator-btn>+</button>
-                    <button class="btn" id="equals-btn">=</button>
+                    <button class="btn" equals-btn">=</button>
                 </div> 
             </div>
         </div>

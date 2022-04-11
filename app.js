@@ -19,10 +19,9 @@ clearScreen() {
     this.operation = undefined
 }
 
-delete() {
+deleteNumber() {
     this.currentOperand = this.currentOperand.toString().slice(0, -1)
 }
-
 
 appendNumber(number) {
     // Allows only 1 period
@@ -80,8 +79,8 @@ updateDisplay() {
 }
 }
 
-const calculator = new Calculator(lastScreen, currentScreen)
 
+const calculator = new Calculator(lastScreen, currentScreen)
 
 // Listener that sets number pressed as currentOperand
 numberButtons.forEach(button => {
@@ -106,7 +105,7 @@ equalsButton.addEventListener('click', button => {
 })
 
 deleteButton.addEventListener('click', button => {
-    calculator.delete()
+    calculator.deleteNumber()
     calculator.updateDisplay()
 })
 

@@ -16,8 +16,9 @@ const lastScreen = document.querySelector('[last-screen]');
 const currentScreen = document.querySelector('[current-screen]');
 
 const clearScreen = function() {
-    currentScreen = ""
-    lastScreen = ""
+    this.currentOperand = ""
+    this.lastOperand = ""
+    this.operation = undefined
 }
 
 const deleteScreens = function() {

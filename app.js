@@ -43,7 +43,29 @@ chooseOperation(operation) {
 }
 
 calculate() {
-
+    let computation
+    const current = parseFloat(this.currentOperand)
+    const previous = parseFloat(this.lastOperand)
+    if (isNaN(previous) || isNaN(current)) return
+    switch (this.operation) {
+        case "+":
+            computation = previous + current
+            break
+        case "-":
+            computation = previous - current
+            break
+        case "X":
+            computation = previous * current
+            break
+        case "%":
+            computation = previous / current
+            break
+        default:
+            return
+    }
+    this.currentOperand = computation
+    this.operation = undefined
+    this.lastOperand = ""
 }
 
 updateDisplay() {
@@ -52,28 +74,6 @@ updateDisplay() {
 }
 
 }
-
-/*
-  const add = function(a, b) {
-      return a + b;
-  };
-  
-  const subtract = function(a, b) {
-      return a - b;
-  };
-
-  const multiply = function(a, b) {
-      return a * b;
-  };
-  
-  const divide = function(a, b) {
-      return a / b;
-  }
-
-  function operate(func, a, b) {
-      return func(a, b);
-  }
-*/
 
 const calculator = new Calculator(lastScreen, currentScreen)
 
@@ -95,7 +95,7 @@ operationButtons.forEach(button => {
     })
   })
 
-equalsButton.addEventListener('click', () => {
+equalsButton.addEventListener('click', button => {
     calculator.calculate()
     calculator.updateDisplay()
 })

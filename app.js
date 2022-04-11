@@ -1,12 +1,3 @@
-class Calculator {
-    constructor(lastScreen, currentScreen) {
-        this.lastScreen = lastScreen
-        this.currentScreen = currentScreen
-        this.clearScreen()
-    }
-    
-}
-
 const numberButtons = document.querySelectorAll('[number-btn]');
 const operatorButtons = document.querySelectorAll('[operator-btn]');
 const equalsButton = document.querySelector('[equals-btn]');
@@ -15,29 +6,38 @@ const deleteButton = document.querySelector('[delete-btn]');
 const lastScreen = document.querySelector('[last-screen]');
 const currentScreen = document.querySelector('[current-screen]');
 
-const clearScreen = function() {
+class Calculator {
+    constructor(lastScreen, currentScreen) {
+        this.lastScreen = lastScreen
+        this.currentScreen = currentScreen
+        this.clearScreen()
+    }
+
+clearScreen() {
     this.currentOperand = ""
     this.lastOperand = ""
     this.operation = undefined
 }
 
-const deleteScreens = function() {
+deleteScreens() {
 
 }
 
-const appendNumber = function(number) {
+appendNumber(number) {
+    this.currentOperand = number
+}
+
+chooseOperation(operation) {
 
 }
 
-const chooseOperation = function(operation) {
+calculate() {
 
 }
 
-const calculate = function() {
-
+updateDisplay() {
+    this.currentScreen.innerText = this.currentOperand
 }
-
-const updateDisplay = function() {
 
 }
 
@@ -63,3 +63,12 @@ const updateDisplay = function() {
 
 
 const calculator = new Calculator(lastScreen, currentScreen)
+
+
+// Listener that sets number pressed as currentOperand
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      calculator.appendNumber(button.innerText)
+      calculator.updateDisplay()
+    })
+  })

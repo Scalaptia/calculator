@@ -19,8 +19,13 @@ clearScreen() {
     this.operation = undefined
 }
 
-deleteScreens() {
+deleteFunction() {
+    this.currentOperand = ""
+    this.lastOperand = ""
+}
 
+clearFunction() {
+    this.currentOperand = ""
 }
 
 appendNumber(number) {
@@ -97,5 +102,15 @@ operationButtons.forEach(button => {
 
 equalsButton.addEventListener('click', button => {
     calculator.calculate()
+    calculator.updateDisplay()
+})
+
+deleteButton.addEventListener('click', button => {
+    calculator.deleteFunction()
+    calculator.updateDisplay()
+})
+
+clearButton.addEventListener('click', button => {
+    calculator.clearFunction()
     calculator.updateDisplay()
 })

@@ -63,7 +63,7 @@ calculate() {
         default:
             return
     }
-    this.currentOperand = computation
+    this.currentOperand = this.roundResult(computation)
     this.operation = undefined
     this.lastOperand = ""
 }
@@ -76,6 +76,10 @@ updateDisplay() {
     } else {
         this.lastScreen.innerText = ""
     }
+}
+
+roundResult(number) {
+  return Math.round(number * 1000) / 1000
 }
 }
 
